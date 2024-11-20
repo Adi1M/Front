@@ -1,0 +1,326 @@
+:root {
+  --primary-color: #598d66;
+  --secondary-color: #e1ede6;
+  --dark-color: #2c2d35;
+  --gray-color: #86928b;
+  --light-color: #f4f6f5;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway";
+  font-weight: 500;
+}
+
+header {
+  background-color: var(--secondary-color);
+  width: 100%;
+  height: 100px;
+}
+
+a {
+  text-decoration: none;
+  max-height: 23px;
+  height: 100%;
+  color: #000;
+}
+
+.back-container {
+  width: 1440px;
+  margin-bottom: 40px;
+}
+
+.container {
+  max-width: 1110px;
+  width: 100%;
+  height: 100%;
+}
+
+.right-side {
+  margin-top: 5px;
+  max-width: 470px;
+  width: 100%;
+  height: 24px;
+}
+
+.center-text {
+  height: 331px;
+  width: 540px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.center-text button {
+  height: 65px;
+  width: 225px;
+  color: var(--primary-color);
+  background-color: #fff;
+}
+
+.header {
+  width: 100%;
+  height: 44px;
+}
+
+.header > div {
+  width: 428px;
+  height: 44px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header > div > button {
+  background: #d4e8d9;
+  border: 1px solid #d4e8d9;
+  border-radius: 20px;
+  padding: 10px 20px;
+  font-size: 20px;
+}
+
+.grid-container {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.card {
+  height: 730px;
+  width: 350px;
+  background: var(--secondary-color);
+}
+
+.card-content {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.to_basket {
+  width: 310px;
+  height: 65px;
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+}
+
+.container-with-image {
+  background: url("images/background_image.jpg");
+  width: 100%;
+  height: 574px;
+  background-size: cover;
+  position: relative;
+  margin-bottom: 70px;
+}
+
+.gradient {
+  background: linear-gradient(
+    90deg,
+    rgba(13, 43, 64, 0.7775560907956933) 7%,
+    rgba(9, 9, 121, 0) 58%
+  );
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+}
+
+.content-on-image {
+  display: flex;
+  flex-direction: column;
+  padding-left: 165px;
+  margin: 70px 0;
+}
+
+.title-of-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 521px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.title {
+  width: 421px;
+  height: 80px;
+}
+
+.text-of-content {
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+  height: 209px;
+}
+
+.content-button {
+  width: 257px;
+  height: 65px;
+  background-color: #eedb6d;
+  padding: 20px 60px;
+  font-size: 20px;
+  border: 1px solid #eedb6d;
+  margin-top: 60px;
+}
+
+.about-team {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 635px;
+  height: 272px;
+}
+
+.team-info {
+  width: 635px;
+  height: 172px;
+}
+
+.team-avatars {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  height: 80px;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+footer {
+  height: 168px;
+  width: 100%;
+  background-color: var(--secondary-color);
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+}
+
+.contacts {
+  width: 170px;
+  height: 52px;
+}
+
+.contacts p {
+  margin: 0;
+}
+
+.footer-content {
+  margin: 23px 0;
+  height: 122px;
+  width: 100%;
+}
+
+.footer-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 168px;
+}
+
+.footer-center {
+  display: flex;
+  gap: 60px;
+  height: 122px;
+  width: 445px;
+}
+
+.footer-right {
+  height: 68px;
+  width: 132px;
+  gap: 10px;
+}
+
+.social-media {
+  display: flex;
+  gap: 30px;
+}
+
+.primary-button {
+  border: 1px solid var(--primary-color);
+  font-size: 20px;
+  padding: 20px 60px;
+}
+
+.color-dark {
+  color: var(--dark-color);
+}
+
+.color-gray {
+  color: var(--gray-color);
+}
+
+.color-green {
+  color: var(--primary-color);
+}
+
+.color-light {
+  color: var(--light-color);
+}
+
+.text-14 {
+  font-size: 14px;
+}
+
+.text-18 {
+  font-size: 18px;
+}
+
+.text-20 {
+  font-size: 20px;
+}
+
+.text-24 {
+  font-size: 24px;
+}
+
+.text-30 {
+  font-size: 30px;
+  margin: 0;
+}
+
+.text-40 {
+  font-size: 40px;
+  line-height: 40px;
+}
+
+.text-60 {
+  font-size: 60px;
+  margin: 0;
+}
+
+.line-height-27 {
+  line-height: 27px;
+}
+
+.margin-6 {
+  margin: 6px 0;
+}
+
+.margin-20 {
+  margin: 20px 0 10px 0;
+}
+
+.margin-24 {
+  margin: 24px 0;
+}
+
+.display-c-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.display-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.display-c-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}

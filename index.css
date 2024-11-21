@@ -334,6 +334,11 @@ footer {
     max-width: 445px;
   }
 
+  .center-image > img{
+    width: 330px;
+    height: 380px;
+  } 
+
   .center-text {
     width: 330px;
     height: 308px;
@@ -346,7 +351,7 @@ footer {
 
   .header > div {
     width: 433px;
-    height: 43px;
+    height: 43px; 
   }
 
   .grid-container {
@@ -356,6 +361,10 @@ footer {
 
   .card {
     width: 330px;
+  }
+
+  .card-content img {
+    width: 290px;
   }
 
   .to_basket {
@@ -381,6 +390,12 @@ footer {
   .title-of-content{
     width: 450px;
     height: 60px;
+    margin-bottom: 30px;
+  }
+
+  .title-of-content img {
+    width: 60px;
+    height: 60px;
   }
 
   .title {
@@ -395,6 +410,8 @@ footer {
   .content-button {
     width: 210px;
     height: 60px;
+    margin-top: 30px;
+    padding: 0;
   }
 
   .about-team {
@@ -410,8 +427,13 @@ footer {
   .column-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .column-container > img {
+    width: 510px;
+    height: 504px;
+    margin-bottom: 40px;
   }
 
   footer {
@@ -419,20 +441,49 @@ footer {
   }
 
   .footer-content {
+    width: 100%;
     height: 204px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: space-between;
+    gap: 30px;
   }
 
   .footer-left {
-    width: 100%;
+    min-width: 690px;
     height: 52px;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
   }
 
+  .footer-left img {
+    width: 143px;
+    height: 35px;
+  }
+
+  .text-60 {
+    font-size: 40px;
+  }
+
+  .text-40 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  
+  .text-20{
+    line-height: 23.48px;
+    margin-top: 0; 
+  }
+
+  .text-18 {
+    line-height: 21.13px;
+  }
 }
 
 
 @media only screen and (max-width: 320px) {
   
 }
-

@@ -11,7 +11,7 @@ body {
   padding: 0;
   font-family: "Raleway";
   font-weight: 500;
-} 
+}
 
 header {
   background-color: var(--secondary-color);
@@ -24,6 +24,10 @@ a {
   max-height: 23px;
   height: 100%;
   color: #000;
+}
+
+.menu-icon {
+  display: none;
 }
 
 .back-container {
@@ -214,6 +218,10 @@ footer {
   width: 100%;
 }
 
+.divide-line {
+  display: none;
+}
+
 .footer-left {
   display: flex;
   flex-direction: column;
@@ -334,10 +342,10 @@ footer {
     max-width: 445px;
   }
 
-  .center-image > img{
+  .center-image > img {
     width: 330px;
     height: 380px;
-  } 
+  }
 
   .center-text {
     width: 330px;
@@ -349,9 +357,9 @@ footer {
     height: 60px;
   }
 
-  .header > div {
+  .header div {
     width: 433px;
-    height: 43px; 
+    height: 43px;
   }
 
   .grid-container {
@@ -371,7 +379,7 @@ footer {
     width: 290px;
   }
 
-  .container-with-image{
+  .container-with-image {
     height: 502px;
   }
 
@@ -387,7 +395,7 @@ footer {
     padding-left: 39px;
   }
 
-  .title-of-content{
+  .title-of-content {
     width: 450px;
     height: 60px;
     margin-bottom: 30px;
@@ -472,10 +480,9 @@ footer {
     line-height: 30px;
   }
 
-  
-  .text-20{
+  .text-20 {
     line-height: 23.48px;
-    margin-top: 0; 
+    margin-top: 0;
   }
 
   .text-18 {
@@ -483,7 +490,272 @@ footer {
   }
 }
 
-
 @media only screen and (max-width: 320px) {
-  
+  header {
+    height: 130px;
+  }
+
+  .back-container {
+    margin: 60px 0;
+  }
+
+  .container {
+    max-width: 290px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .icon-name {
+    width: 320px;
+    height: 68px;
+    background-color: var(--light-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-side {
+    width: 320px;
+    height: 240px;
+  }
+
+  .menu-icon {
+    display: flex;
+    width: 20.62px;
+    height: 16.88px;
+  }
+
+  .right-side a {
+    display: none;
+  }
+
+  .right-side {
+    height: 30px;
+    margin: 16px 0;
+  }
+
+  .center-image {
+    display: none;
+  }
+
+  .center-text {
+    width: 290px;
+    height: 233px;
+  }
+
+  .center-text p {
+    font-size: 14px;
+  }
+
+  .center-text button {
+    width: 154px;
+    height: 50px;
+  }
+
+  .header {
+    height: 87px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header div {
+    width: 290px;
+    height: 41px;
+  }
+
+  .header > div > button {
+    background: #d4e8d9;
+    border: 1px solid #d4e8d9;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 14px;
+  }
+
+  .grid-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .card {
+    width: 290px;
+    height: 514px;
+  }
+
+  .card img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .to_basket {
+    width: 250px;
+    height: 50px;
+  }
+
+  .container-with-image {
+    height: 552px;
+    margin-bottom: 60px;
+  }
+
+  .gradient {
+    background: none;
+  }
+
+  .content-on-image {
+    padding-left: 15px;
+    margin: 50px 0;
+  }
+
+  .title-of-content {
+    width: 290px;
+    height: 72px;
+    margin-bottom: 20px;
+  }
+
+  .title-of-content img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .title {
+    width: 230px;
+  }
+
+  .text-of-content {
+    height: 280px;
+    width: 290px;
+  }
+
+  .content-button {
+    width: 290px;
+    height: 50px;
+  }
+
+  .about-team {
+    width: 290px;
+    height: 344px;
+  }
+
+  .column-container img {
+    width: 290px;
+    height: 286px;
+  }
+
+  .team-info {
+    width: 290px;
+    height: 198px;
+  }
+
+  .team-avatars {
+    width: 290px;
+  }
+
+  .avatar {
+    max-width: 80px;
+    max-height: 80px;
+  }
+
+  .primary-button {
+    font-size: 18px;
+    line-height: 21.13px;
+    padding: 0;
+  }
+
+  .text-14 {
+    font-size: 12px;
+    line-height: 14.4px;
+  }
+
+  .text-18,
+  .text-20 {
+    font-size: 16px;
+    line-height: 18.78px;
+  }
+
+  .text-24 {
+    font-size: 24px;
+  }
+
+  .text-30 {
+    font-size: 24px;
+    line-height: 28.18px;
+  }
+
+  .text-40 {
+    font-size: 24px;
+    line-height: 26.4px;
+  }
+
+  .text-60 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+
+  .line-height-27 {
+    line-height: 22.4px;
+  }
+
+  .margin-20 {
+    margin-top: 15px;
+    margin-bottom: 10px;
+  }
+
+  .margin-24 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  footer {
+    height: 395px;
+    margin-top: 94px;
+  }
+
+  .contacts {
+    width: 136px;
+    height: 46px;
+  }
+
+  .footer-content {
+    height: 355px;
+    margin: 20px 0;
+    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .footer-left {
+    height: 101px;
+    display: flex;
+    flex-direction: column;
+    max-width: 143px;
+    min-width: 0;
+  }
+
+  .footer-center {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    gap: 40px;
+  }
+
+  .menu-column {
+    flex: 1;  
+  }
+
+  .footer-right {
+    height: 48px;
+    width: 176px;
+  }
+
+  .corparation-name {
+    height: 14px;
+    text-align: center;
+    width: 100%;
+  }
+
+  .divide-line {
+    display: flex;
+    border: 1px solid #c3d1c6;
+  }
 }

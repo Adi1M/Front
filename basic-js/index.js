@@ -1,39 +1,78 @@
 const tasks = [];
 
 function addTask(taskValue) {
+  let timer = null;
+  let seconds = 0;
   let taskList = document.getElementById("list");
 
-  let taskDescription = document.createElement("input");
+  const taskDescription = document.createElement("input");
   taskDescription.type = "text";
   taskDescription.value = taskValue;
   taskDescription.setAttribute("disabled", true);
-  taskDescription.id = "task-description";
+  taskDescription.className = "task-description";
 
-  let taskBox = document.createElement("div");
-  taskBox.id = "list-items";
+  const display = document.createElement("p");
+  display.className = "display";
+  display.textContent = "00:00";
 
-  taskList.appendChild(taskBox);
+  const timerBox = document.createElement("div");
+  timerBox.className = "timer";
+  timerBox.appendChild(display);
 
-  let buttonBox = document.createElement("div");
-  buttonBox.id = "task-buttons";
+  const descriptionTimerBox = document.createElement("div");
+  descriptionTimerBox.className = "description-timer-box";
+  descriptionTimerBox.append(taskDescription, timerBox);
 
-  let deleteButton = document.createElement("button");
+  const taskBox = document.createElement("div");
+  taskBox.className = "list-items";
+
+  const buttonBox = document.createElement("div");
+  buttonBox.className = "task-buttons";
+
+  const deleteButton = document.createElement("button");
   deleteButton.textContent = "Delete";
-  deleteButton.id = "secondary-button";
+  deleteButton.className = "secondary-button";
   deleteButton.onclick = () => deleteTask(taskValue, taskBox);
 
-  let editButton = document.createElement("button");
+  const editButton = document.createElement("button");
   editButton.textContent = "Edit";
-  editButton.id = "secondary-button";
-  editButton.onclick = () => editTask(taskDescription, taskBox, buttonBox);
+  editButton.className = "secondary-button";
+  editButton.onclick = () => editTask(taskDescription, buttonBox);
 
-  let timerStartButton = document.createElement("button");
-  timerStartButton.id = "secondary-button";
-  timerStartButton.className = "fas fa-play";
+  const playButton = document.createElement("button");
+  playButton.className = "secondary-button fa fa-play";
+  playButton.onclick = () => startTimer(display, playButton, pauseButton);
 
-  buttonBox.append(deleteButton, editButton, timerStartButton);
-  taskBox.append(taskDescription, buttonBox);   
+  const pauseButton = document.createElement("button");
+  pauseButton.className = "secondary-button fa fa-pause";
+  pauseButton.style.display = "none";
+  pauseButton.onclick = () => stopTimer(playButton, pauseButton);
+
+  buttonBox.append(deleteButton, editButton, playButton, pauseButton);
+  taskBox.append(descriptionTimerBox, buttonBox);
+  taskList.appendChild(taskBox);
+
+  function startTimer(display, playButton, pauseButton) {
+    if (!timer) {
+      timer = setInterval(() => {
+        seconds++;
+        display.textContent = timeFormat(seconds);
+      }, 1000);
+      playButton.style.display = "none";
+      pauseButton.style.display = "inline-block";
+    }
+  }
+
+  function stopTimer(playButton, pauseButton) {
+    if (timer) {
+      clearInterval(timer);
+      timer = null;
+      playButton.style.display = "inline-block";
+      pauseButton.style.display = "none";
+    }
+  }
 }
+
 
 function saveTask() {
   let taskValue = document.getElementById('add-task').value;
@@ -75,13 +114,14 @@ function editTask(taskDescription, taskBox, buttonBox) {
   buttonBox.style.display = "none";
 
   let saveNewValueBox = document.createElement("div");
-  buttonBox.id = "task-buttons";
+  saveNewValueBox.id = "task-buttons";
 
   let cancelButton = document.createElement("button");
   cancelButton.textContent = "Cancel";
   cancelButton.id = "secondary-button";
   cancelButton.onclick = () => {
     taskDescription.setAttribute("disabled", true);
+    taskDescription.value = tasks[index];
     saveNewValueBox.remove();
     buttonBox.style.display = "flex";
   };
@@ -89,7 +129,7 @@ function editTask(taskDescription, taskBox, buttonBox) {
   let saveButton = document.createElement("button");
   saveButton.textContent = "Save";
   saveButton.id = "secondary-button";
-  saveButton.onclick = () => saveUpdatedTask(index, taskDescription.value);  
+  saveButton.onclick = () => saveUpdatedTask(index, taskDescription.value, taskDescription, saveNewValueBox, buttonBox);  
 
   saveNewValueBox.append(cancelButton, saveButton);
   taskBox.appendChild(saveNewValueBox);
@@ -104,6 +144,14 @@ function saveUpdatedTask(index, newTaskValue, taskDescription, saveNewValueBox, 
   taskDescription.setAttribute("disabled", true);
   saveNewValueBox.remove();
   buttonBox.style.display = "flex";
+}
+
+
+function timeFormat(seconds) {
+  let minutes = Math.floor(seconds / 60);
+  let remainingSeconds = seconds % 60;
+
+  return `${minutes.toString().padStart(2, '0')}:${remainingSeconds.toString().padStart(2, '0')}`;
 }
 
 document.addEventListener("DOMContentLoaded", () => {

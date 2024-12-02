@@ -19,7 +19,7 @@ section {
   border-radius: 50px;
   background-color: #f4f5f6;
   min-width: 450px;
-  min-height: 600px;
+  min-height: 650px;
 }
 
 #task__input {
@@ -35,7 +35,7 @@ input[type="text"] {
   border-radius: 50px;
 }
 
-#primary-button {
+.primary-button {
   width: 100px;
   height: 40px;
   background-color: #aecddd;
@@ -47,7 +47,7 @@ input[type="text"] {
   margin-left: 15px;
 }
 
-#secondary-button {
+.secondary-button {
   width: 100px;
   height: 40px;
   background-color: #f4f5f6;
@@ -67,7 +67,7 @@ input[type="text"] {
   margin-top: 30px;
 }
 
-#task-list {
+.task-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -81,22 +81,22 @@ input[type="text"] {
   margin: 0;
 }
 
-#list-items {
+.list-items {
   background-color: #aecddd;
   border-radius: 50px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  width: 440px;
+  max-width: 440px;
   margin-top: 10px;
   padding: 10px;
 }
 
-#task-description {
+.task-description {
   display: flex; 
   align-items: center;
-  width: 90%;
+  width: 70%;
   background-color: #f4f5f6;
   border-radius: 50px;
   height: 40px;
@@ -107,8 +107,28 @@ input[type="text"] {
   padding: 0 10px;
 }
 
-#task-buttons {
+.task-buttons {
   display: flex;
   justify-content: space-evenly;
   margin: 10px 0; 
+}
+
+.description-timer-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 1px solid #f4f5f6;
+  background-color: #f4f5f6;
+  border-radius: 50%;
+  color: #aecddd;
+  font-size: 16px;
 }

@@ -114,11 +114,11 @@ function editTask(taskDescription, taskBox, buttonBox) {
   buttonBox.style.display = "none";
 
   let saveNewValueBox = document.createElement("div");
-  saveNewValueBox.id = "task-buttons";
+  saveNewValueBox.className = "task-buttons";
 
   let cancelButton = document.createElement("button");
   cancelButton.textContent = "Cancel";
-  cancelButton.id = "secondary-button";
+  cancelButton.className = "secondary-button";
   cancelButton.onclick = () => {
     taskDescription.setAttribute("disabled", true);
     taskDescription.value = tasks[index];
@@ -128,7 +128,7 @@ function editTask(taskDescription, taskBox, buttonBox) {
 
   let saveButton = document.createElement("button");
   saveButton.textContent = "Save";
-  saveButton.id = "secondary-button";
+  saveButton.className = "secondary-button";
   saveButton.onclick = () => saveUpdatedTask(index, taskDescription.value, taskDescription, saveNewValueBox, buttonBox);  
 
   saveNewValueBox.append(cancelButton, saveButton);
@@ -161,9 +161,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let listTasks = JSON.parse(storedTasks);
 
-    for (let task of listTasks) {
-      tasks.push(task);
+    listTasks.forEach(task => {
       addTask(task);
-    }
+      tasks.push(task);
+    });
   }
 });
